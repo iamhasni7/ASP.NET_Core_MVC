@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Category>
+@{
+}
+
+<h2>Total Entries:</h2>
+
+<table style="width:500px;">
+    <tr>
+        <th><b>Id</b></th>
+        <th><b>Name</b></th>
+        <th><b>Country</b></th>
+    </tr>
+    @foreach (var obj in Model)
+    {
+        <tr>
+            <th>@obj.Id</th>
+            <th>@obj.Name</th>
+            <th>@obj.Country</th>
+        </tr>
+    }
+
+
+</table>
