@@ -20,12 +20,12 @@ namespace ASP.NET_Core_MVC.Controllers
             return View(categories);
         }
 
+        //POST method to add new entry in db.
         public IActionResult Create()
         {            
             return View();
         }
-
-        //POST method to add new entry in db.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
@@ -39,7 +39,8 @@ namespace ASP.NET_Core_MVC.Controllers
             return View(obj);
         }
 
-        public IActionResult Update(int? id)
+        //Update method for Updating an entry into db.
+        public IActionResult Edit(int? id)
         {
             if(id == null || id == 0)
             {
@@ -53,11 +54,10 @@ namespace ASP.NET_Core_MVC.Controllers
 
             return View(categoryFromDb);
         }
-
-        //POST method to add new entry in db.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Category obj)
+        public IActionResult Edit(Category obj)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +66,6 @@ namespace ASP.NET_Core_MVC.Controllers
                 return RedirectToAction("Index");
             }
             return View(obj);
-        }
+        }        
     }
 }
