@@ -1,0 +1,32 @@
+﻿@model Category 
+
+<form method="post" asp-action="Delete">
+	<table>
+		<tr>
+			<td>
+				<label asp-for="Name"></label>
+			</td>
+			<td>
+				<input asp-for="Name" class="form-control">
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label asp-for="Country"></label>
+			</td>
+			<td>
+				<input asp-for="Country" class="form-control">
+				<span asp-validation-for="Country" class="text-danger"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<button type="submit">Delete</button>
+				<a asp-controller="Category" asp-action="Index">Back to list</a>
+			</td>
+		</tr>		
+	</table>
+</form>
