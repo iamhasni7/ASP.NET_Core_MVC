@@ -4,20 +4,27 @@
 
 <h2>Total Entries:</h2>
 
+<a asp-controller="Category" asp-action="Create">Create new record</a>
+
+
+
 <table style="width:500px;">
     <tr>
         <th><b>Id</b></th>
         <th><b>Name</b></th>
         <th><b>Country</b></th>
+        <th></th>
     </tr>
+
     @foreach (var obj in Model)
     {
         <tr>
-            <th>@obj.Id</th>
-            <th>@obj.Name</th>
-            <th>@obj.Country</th>
+            <td>@obj.Id</td>
+            <td>@obj.Name</td>
+            <td>@obj.Country</td>
+            <td>
+                <a asp-controller="Category" asp-action="Update" asp-route-id="@obj.Id"></a>
+            </td>
         </tr>
     }
-
-
 </table>
